@@ -2,6 +2,7 @@ syntax on
 filetype indent plugin on
 set omnifunc=syntaxcomplete#Complete
 set number
+set relativenumber
 " Edit vimr configuration file
 nnoremap confe :e $MYVIMRC<CR>
 " Reload vims configuration file
