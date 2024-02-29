@@ -28,3 +28,11 @@ let g:indent_guides_enable_on_vim_startup=1
 " block in normal mode
 let &t_SI = "\e[6 q"
 let &t_EI = "\e[2 q"
+" Strip trailing whitespace on save
+function! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
